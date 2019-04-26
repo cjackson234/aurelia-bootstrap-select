@@ -8,6 +8,7 @@
             blur.trigger="blur()"
             required.bind="required"
             data-selected-text-format="count > 3"
+            data-live-search="true"
             placeholder.bind="placeholder">
 
         <optgroup if.bind="util.parseBool(hasOptgroup)" repeat.for="group of getGroupedCollection()"
@@ -28,8 +29,7 @@
                 ${util.isObject(opt) ? getMappingPropertyValue(opt, 'option') : opt}
             </option>
         </optgroup>
-        <option if.bind="!util.parseBool(hasOptgroup)" repeat.for="opt of collection"
-            data-live-search="true"
+        <option if.bind="!util.parseBool(hasOptgroup)" repeat.for="opt of collection"            
             value.bind="util.isObject(opt) ? opt[objectKey] : opt"
             data-content.bind="getMappingPropertyValue(opt, 'content') & optional"
             content.bind="getMappingPropertyValue(opt, 'content') & optional"
