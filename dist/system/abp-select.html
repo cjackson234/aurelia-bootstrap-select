@@ -29,6 +29,7 @@
             </option>
         </optgroup>
         <option if.bind="!util.parseBool(hasOptgroup)" repeat.for="opt of collection"
+            data-live-search="true"
             value.bind="util.isObject(opt) ? opt[objectKey] : opt"
             data-content.bind="getMappingPropertyValue(opt, 'content') & optional"
             content.bind="getMappingPropertyValue(opt, 'content') & optional"
